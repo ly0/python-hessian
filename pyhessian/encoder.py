@@ -254,7 +254,11 @@ class Encoder(object):
         return pack('>2cl', b'V', b'l', len(obj)) + encoded + b'z'
 
     def encode_keyval(self, pair):
-        return self.encode(pair[0]) + self.encode(pair[1])
+        foo = self.encode(pair[0])
+        bar = self.encode(pair[1])
+        foo = foo.encode('utf-8') if isinstance(foo, str) else foo
+        bar = bar.encode('utf-8') if isinstance(bar, str) else bar
+        return foo + bar
 
     @encoder_for(dict)
     def encode_map(self, obj):
