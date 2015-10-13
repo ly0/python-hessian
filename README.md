@@ -20,12 +20,11 @@ Using ``pyhessian.client``
 
 Testing against `Caucho’s <http://hessian.caucho.com/>`_ reference service:
 
-.. code-block:: python
-
-   from pyhessian.client import HessianProxy
-   service = HessianProxy("http://hessian.caucho.com/test/test")
-   print service.replyDate_1()
-
+```python
+from pyhessian.client import HessianProxy
+service = HessianProxy("http://hessian.caucho.com/test/test")
+print service.replyDate_1()
+```
 Source
 ------
 
