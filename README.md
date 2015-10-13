@@ -15,8 +15,7 @@ as well as a general-purpose serialization library.
 Usage
 -----
 
-Using ``pyhessian.client``
-..........................
+#### Using `pyhessian.client`
 
 Testing against `Caucho’s <http://hessian.caucho.com/>`_ reference service:
 
@@ -25,6 +24,26 @@ from pyhessian.client import HessianProxy
 service = HessianProxy("http://hessian.caucho.com/test/test")
 print service.replyDate_1()
 ```
+
+#### Examples
+Here is the example codes in situation which you need to serialize a java object to hessian.
+```python
+from pyhessian.protocol import cls_factory
+from pyhessian.client import HessianProxy
+
+NiceObject = cls_factory(
+    name='com.company.objects.NiceObject',
+    fields=['id', 'name', 'address']
+    )
+
+nice_object = NiceObject(id=998, name='Wondernaire', address='GFW Inside')
+
+url = r'http://SOMEURL'
+service = HessianProxy(url)
+data = nice_object
+res = service.NiceObjectSubmit(data)
+```
+
 Source
 ------
 
