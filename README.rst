@@ -1,6 +1,8 @@
 About
 -----
 
+This is a python-hessian fork for python3.4
+
 **python-hessian** is a Python implemention of Hessian, a binary web services
 protocol. It supports the `Hessian 1.0.2 specification
 <http://hessian.caucho.com/doc/hessian-1.0-spec.xtp>`_ and the
